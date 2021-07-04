@@ -1,3 +1,15 @@
+export interface ResponseObject {
+  info: Info;
+  results: Member[];
+}
+
+export interface Info {
+  seed: string,
+  results: number,
+  page: number,
+  version: string
+}
+
 export interface Member {
   gender: Gender,
   name: Name,
@@ -5,8 +17,7 @@ export interface Member {
   email: string,
   dob: DOB,
   phone: string,
-  thumbnailUrl: string,
-  largeUrl: string
+  picture: Picture
 }
 
 export enum Gender {
@@ -16,8 +27,8 @@ export enum Gender {
 
 export interface Name {
   title: string,
-  firstName: string,
-  lastName: string,
+  first: string,
+  last: string,
 }
 
 export interface Location {

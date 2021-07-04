@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { FilterComponent } from './filter/filter.component';
+import { MemberDataService } from './member-data.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { FilterComponent } from './filter/filter.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MemberDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
