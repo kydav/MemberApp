@@ -1,10 +1,16 @@
-<div class="backButton" (click)="backToList()"><i class="fas fa-arrow-left fa-2x" ></i></div>
 <div class="member-detail" *ngIf="activeMember">
-  <img [src]="activeMember.picture.large">
+  <div class="image">
+    <img [src]="activeMember.picture.large">
+  </div>
   <div class="name">{{activeMember.name.first + ' ' + activeMember.name.last}}</div>
-  <div class="address">{{activeMember.location.street.number + ' ' + activeMember.location.street.name}}</div>
-  <div class="state">{{activeMember.location.city + ' ' + activeMember.location.state + ' ' + activeMember.location.postcode}}</div>
-  <div class="email">{{activeMember.email}}</div>
-  <div class="dob">{{activeMember.dob.date | date: 'MMMM d, y'}}</div>
-  <div class="phone">{{activeMember.phone}}</div>
+  <div class="address-block">
+    <div><i class="fas fa-home fa-2x"></i></div>
+    <div class="address-text">
+      <div class="address">{{activeMember.location.street.number + ' ' + activeMember.location.street.name}}</div>
+      <div class="state">{{activeMember.location.city + ' ' + activeMember.location.state + ' ' + activeMember.location.postcode}}</div>
+    </div>
+  </div>
+  <div class="email"><i class="fas fa-at"></i><p><a href="mailto: {{activeMember.email}}">{{activeMember.email}}</a></p></div>
+  <div class="dob"><i class="fas fa-birthday-cake"></i><p>{{activeMember.dob.date | date: 'MMMM d, y'}}</p></div>
+  <div class="phone"><i class="fas fa-mobile-alt"></i><p>{{activeMember.phone}}</p></div>
 </div>

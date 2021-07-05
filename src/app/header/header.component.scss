@@ -1,0 +1,11 @@
+nav {
+  display: flex;
+  align-items: center;
+  .header-text {
+    font-size:xx-large;
+    margin-left: 10px;
+  }
+  .backButton {
+    cursor: pointer;
+  }
+}

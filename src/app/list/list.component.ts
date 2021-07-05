@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { MemberDataService } from '../member-data.service';
-import { Member, ResponseObject } from '../models/member';
+import { Member } from '../models/member';
 
 @Component({
   selector: 'app-list',
@@ -27,7 +26,7 @@ export class ListComponent implements OnInit {
   }
 
   search(event: any): void {
-    if(this.setOriginalMembers < 1) {
+    if (this.setOriginalMembers < 1) {
       this.originalMembers = this.members;
       this.setOriginalMembers++;
     }

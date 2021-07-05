@@ -6,15 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
-import { FilterComponent } from './filter/filter.component';
 import { MemberDataService } from './member-data.service';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     MemberDetailComponent,
-    FilterComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
