@@ -8,4 +8,7 @@ nav {
   .backButton {
     cursor: pointer;
   }
+  .backButton:hover {
+    color: grey;
+  }
 }

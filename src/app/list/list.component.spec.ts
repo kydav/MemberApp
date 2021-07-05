@@ -1,4 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ListComponent } from './list.component';
 
@@ -8,7 +10,10 @@ describe('ListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListComponent ]
+      declarations: [ ListComponent ],
+      imports: [
+        HttpClientModule,
+        RouterTestingModule ]
     })
     .compileComponents();
   }));
@@ -22,4 +27,5 @@ describe('ListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
