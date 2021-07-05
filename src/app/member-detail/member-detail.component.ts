@@ -7,20 +7,21 @@ import { Member } from '../models/member';
 @Component({
   selector: 'app-member-detail',
   templateUrl: './member-detail.component.html',
-  styleUrls: ['./member-detail.component.sass']
+  styleUrls: ['./member-detail.component.scss']
 })
 export class MemberDetailComponent implements OnInit {
 
   activeMember: Member;
-  constructor(private memberService: MemberDataService, private router: Router, private route: ActivatedRoute) { }
-
-  ngOnInit() {
+  constructor(private memberService: MemberDataService, private router: Router, private route: ActivatedRoute) {
     let email = this.route.snapshot.paramMap.get('email');
     this.memberService.getMembers().subscribe(members => this.activeMember = members.find(member => member.email === email));
-    //this.activeMember = this.memberService.getActiveMember();
-    // if(!this.activeMember) {
-    //   this.router.navigate(['list']);
-    // }
+  }
+
+  ngOnInit() {
+  }
+
+  backToList(): void {
+    this.router.navigate(['list']);
   }
 
 }

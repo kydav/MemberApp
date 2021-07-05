@@ -1,5 +1,10 @@
-<img [src]="activeMember.picture.large">
-<div>{{activeMember.name.first + activeMember.name.last}}</div>
-<div>{{activeMember.location.street.number + activeMember.location.street.name}}</div>
-<div>{{activeMember.location.city + activeMember.location.state + activeMember.location.postcode}}</div>
-<div>{{activeMember.email}}</div>
+<div class="backButton" (click)="backToList()"><i class="fas fa-arrow-left fa-2x" ></i></div>
+<div class="member-detail" *ngIf="activeMember">
+  <img [src]="activeMember.picture.large">
+  <div class="name">{{activeMember.name.first + ' ' + activeMember.name.last}}</div>
+  <div class="address">{{activeMember.location.street.number + ' ' + activeMember.location.street.name}}</div>
+  <div class="state">{{activeMember.location.city + ' ' + activeMember.location.state + ' ' + activeMember.location.postcode}}</div>
+  <div class="email">{{activeMember.email}}</div>
+  <div class="dob">{{activeMember.dob.date | date: 'MMMM d, y'}}</div>
+  <div class="phone">{{activeMember.phone}}</div>
+</div>

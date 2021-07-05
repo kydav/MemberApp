@@ -1,12 +1,15 @@
+<div class="filter">
+  <input (keyup)="search($event)" placeholder="Search Members">
+</div>
 <table>
   <tr>
-    <th></th>
+    <th class="image">Image</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Age</th>
   </tr>
-  <tr *ngFor="let member of members" (click)="memberClick(member)">
-    <td><img [src]="member.picture.thumbnail"></td>
+  <tr class="members" *ngFor="let member of members" (click)="memberClick(member)">
+    <td class="image"><img [src]="member.picture.thumbnail"></td>
     <td>{{ member.name.first }}</td>
     <td>{{ member.name.last }}</td>
     <td>{{ member.dob.age }}</td>
